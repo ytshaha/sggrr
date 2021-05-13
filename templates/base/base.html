@@ -1,0 +1,43 @@
+{% load static %}
+{% load humanize %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include 'base/base/header.html' %}
+    {% include 'base/base/style.html' %}
+    {% block header %}
+    {% endblock %}
+
+    <title>손꾸락닷컴</title>
+</head> 
+
+<body>
+    {% include 'base/base/navbar.html' %}
+    {% if messages %}
+        <div class="alert alert-success messages">
+            {% for message in messages %}
+            <span{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+                {{ message }}<br/>
+            </span>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    {% block content %}
+    {% endblock %} 
+
+    <hr style="margin: 10px 0px 0px; height: 1px; border: none; background-color: rgb(224, 224, 224);">
+    <!-- 여기부터 Footer -->  
+    {% include 'base/base/footer.html' %}
+    <!-- Footer 끝 --> 
+
+    
+{% block javascript %}
+{% endblock %}
+{% include 'base/base/js.html' %}
+
+</body>
+
+</html>

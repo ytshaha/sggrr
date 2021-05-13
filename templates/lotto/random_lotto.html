@@ -1,0 +1,31 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<div class='container'>
+    <h1>로또 랜덤뽑기</h1>
+    <form method="post" action="">
+        {% csrf_token %}
+        <div class='col-8'>
+            <div class='row'>
+                <div class='col-8'>
+                    <input class='form-control' type="number" name='num' min='1' placeholder="숫자를 넣어주십쇼">    
+                </div>
+                <div class='col-4'>
+                    <button class='btn btn-outline-dark btn-block' type='submit'>로또번호만들기</button>    
+                </div>
+            </div>
+        </div>
+    </form>
+    {% if lottos %}
+        {% for lotto in lottos %}
+        <p>    
+            {% for num in lotto %}
+            <span>{{ num }}{% if not forloop.last %}, {% endif %}</span>
+            {% endfor %}
+        </p>
+        {% endfor %}
+    {% endif %}
+
+</div>
+
+{% endblock %}
