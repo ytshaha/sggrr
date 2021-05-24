@@ -7,5 +7,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
     url(r'^lotto/', include('lotto.urls')),
+    url(r'^coin/', include('coin.urls')),
+    
 ]
 

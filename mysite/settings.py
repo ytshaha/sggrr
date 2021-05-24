@@ -22,6 +22,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'ax9nacp69_#$x3weg@&)_&ozhro5xp+0!#z$p!jm@bc$=lgpp*'
 
+# TELEGRAM BOT TOKEN
+bot = telegram.Bot(token='1823266093:AAHZIcp3QSVx0cjdyKLAyuRwyWk2Z9KNhKw')
+chat_id = 159774767
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
