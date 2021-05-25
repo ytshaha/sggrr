@@ -22,9 +22,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'ax9nacp69_#$x3weg@&)_&ozhro5xp+0!#z$p!jm@bc$=lgpp*'
 
-# TELEGRAM BOT TOKEN
-bot = telegram.Bot(token='1823266093:AAHZIcp3QSVx0cjdyKLAyuRwyWk2Z9KNhKw')
-chat_id = 159774767
+# 업비트 Open API Key
+UPBIT_API_ACCESS_KEY = 'o656xz2cxRiZxXrzePVFvJLIV4ypMa6xP9BFPc5E'
+UPBIT_API_SECRET_KEY = 'QTf4j6bzjuOGGJBIp3WgmsxQxgq1TmxZndxCQcsT'
+
+# 바이낸스 API Key
+BINANCE_API_ACCESS_KEY = 'dCIGq57YZMq96bKEOsRJNV86ZMWK5DqJ0COtsEds857E6Logxxi0BxoUniZdElsu'
+BINANCE_API_SECRET_KEY = 'kSDYbszvA8WX7maC7G9jUbEwqRaNq5uoo7VlEBinPH6GXJ6s2LRZ71RwLkk8Xh6N'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

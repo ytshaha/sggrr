@@ -1,6 +1,6 @@
 import telegram
 import time
-import coin_api as c
+import coin.coin_api as c
 
 
 def coin():

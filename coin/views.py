@@ -2,13 +2,10 @@ from django.shortcuts import render
 import coin.coin_api as c
 import coin.telegram_bot as telbot
 
-bot = telegram.Bot(token='1823266093:AAHZIcp3QSVx0cjdyKLAyuRwyWk2Z9KNhKw')
-chat_id = 159774767
-
 # Create your views here.
 def coin(request):
     a = c.get()
-    btc_price = a['data'][0]['quote']['USD']['price']
+    btc_price = a['data']['XRP']['quote']['KRW']['price']
     return render(request, 'coin/coin.html', {'btc_price':btc_price})
 
 

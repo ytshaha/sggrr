@@ -1,14 +1,129 @@
 {% extends 'base/base.html' %}
 
 {% block content %}
-<div class='container mt-5'>
-    <div class='col text-center mb-3'>
-        <h1>코인 개떡상 가즈아~~~~</h1>
+<div class='container' style='margin-top:100px;'>
+    <div class='row'>
+        <div class='col text-center'>
+            <h1 class='font-ee'>암호화폐현황</h1>
+            <p class='font-ee'>코인은 항상 반등한다. 재개떡상 가즈아~~~</p>
+            <p class='font-ee'>BTC PRICE : {{ btc_price }}</p>
+        </div>    
     </div>
-    <h1>BTC PRICE : {{ btc_price }}</h1>
-    <iframe src="https://sslcharts.forexprostools.com/index.php?force_lang=1&pair_ID=1031673&timescale=3600&candles=50&style=candles"></iframe>
+    <!-- TradingView Widget BEGIN -->
+    <div class="tradingview-widget-container">
+        <div class="tradingview-widget-container__widget"></div>
+        <div class="tradingview-widget-copyright">TradingView 제공 <a href="https://kr.tradingview.com" rel="noopener" target="_blank"><span class="blue-text">쿼트</span></a></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
+                {
+                "symbols": [
+                {
+                    "proName": "FOREXCOM:SPXUSD",
+                    "title": "S&P 500"
+                },
+                {
+                    "proName": "FOREXCOM:NSXUSD",
+                    "title": "Nasdaq 100"
+                },
+                {
+                    "description": "BITCOIN(빗썸)",
+                    "proName": "BITHUMB:BTCKRW"
+                },
+                {
+                    "description": "BITCOIN(코인베이스)",
+                    "proName": "COINBASE:BTCUSD"
+                }
+                ],
+                "colorTheme": "light",
+                "isTransparent": false,
+                "showSymbolLogo": true,
+                "locale": "en"
+            }
+        </script>
+    </div>
+    <!-- TradingView Widget END -->
+    <div class='row'>
+        <div class='col'>
+            <!-- TradingView Widget BEGIN -->
+            <div class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+                <div class="tradingview-widget-copyright"><a href="https://uk.tradingview.com/symbols/BTCKRW/technicals/" rel="noopener" target="_blank"><span class="blue-text">Technical Analysis for BTCKRW</span></a> by TradingView</div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
+                        {
+                        "interval": "1h",
+                        "width": 425,
+                        "isTransparent": false,
+                        "height": 450,
+                        "symbol": "BITHUMB:BTCKRW",
+                        "showIntervalTabs": true,
+                        "locale": "en",
+                        "colorTheme": "light"
+                    }
+                </script>
+            </div>
+            <!-- TradingView Widget END -->
+        </div>
+        <div class='col'>
+            <!-- TradingView Widget BEGIN -->
+            <div class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+                <div class="tradingview-widget-copyright"><a href="https://uk.tradingview.com/symbols/ETHKRW/technicals/" rel="noopener" target="_blank"><span class="blue-text">Technical Analysis for ETHKRW</span></a> by TradingView</div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
+                {
+                "interval": "1h",
+                "width": 425,
+                "isTransparent": false,
+                "height": 450,
+                "symbol": "BITHUMB:ETHKRW",
+                "showIntervalTabs": true,
+                "locale": "en",
+                "colorTheme": "light"
+            }
+                </script>
+            </div>
+            <!-- TradingView Widget END -->
+        </div>
+        
+    </div>
+
+    
+    <!-- TradingView Widget BEGIN -->
+    <div class="tradingview-widget-container">
+        <div id="tradingview_1f44c"></div>
+        <div class="tradingview-widget-copyright">TradingView 제공 <a href="https://kr.tradingview.com/symbols/BTCKRW/?exchange=BITHUMB" rel="noopener" target="_blank"><span class="blue-text">BTCKRW 차트</span></a></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+        <script type="text/javascript">
+
+            windowWidth = $(window).width();
+            console.log(windowWidth)
+
+            new TradingView.widget(
+            {
+            "width": windowWidth * 0.8,
+            "height":480,
+            "height" : 400,
+            "symbol": "BITHUMB:BTCKRW",
+            "interval": "60",
+            "timezone": "Asia/Seoul",
+            "theme": "light",
+            "style": "1",
+            "locale": "en",
+            "toolbar_bg": "#f1f3f6",
+            "enable_publishing": false,
+            "allow_symbol_change": true,
+            "container_id": "tradingview_1f44c"
+        }
+            );
+        </script>
+    </div>
+  <!-- TradingView Widget END -->
     <iframe src="https://www.widgets.investing.com/top-cryptocurrencies?theme=darkTheme" width="100%" height="100%" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0" style='height:500px;'></iframe>
     
+
+
+    
+
+
 </div>
+
 
 {% endblock %}
