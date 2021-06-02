@@ -8,7 +8,8 @@ def coin(request):
     btc_price = a['data']['XRP']['quote']['KRW']['price']
     return render(request, 'coin/coin.html', {'btc_price':btc_price})
 
-
+def coin2(request):
+    return render(request, 'coin/coin2.html', {})
 
 # -*- coding: utf-8 -*-
 

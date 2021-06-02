@@ -6,4 +6,5 @@ app_name = 'coin'
 
 urlpatterns = [
     path('', views.coin, name='coin'),
+    path('test/', views.coin2, name='coin2'),
 ]
